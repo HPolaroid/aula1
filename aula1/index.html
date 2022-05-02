@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        function validar(){
+            var nome = form1.nome.value
+            var email = form1.email.value
+            var cidade = form1.cidade.value
+
+                if(nome==""){
+                    alert("Campo nome obrigatório!")
+                    form1.nome.focus();
+                    return false;
+                }
+                if(email==""){
+                    alert("Campo E-mail obrigatório!")
+                    form1.email.focus();
+                    return false;
+                }
+                if(cidade==""){
+                    alert("Campo cidade obrigatório!")
+                    form1.cidade.focus();
+                    return false;
+                }
+        }
+    </script>
+
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Preenchimento de Formulário</h2>
+    <form name="form1" action="obrigado.html" method="post" onsubmit="return validar()">
+        Nome: <input type="text" name="nome"><br /> <br />
+        E-mail: <input type="email" name="email"><br /> <br />
+        Cidade: <input type="cidade" name="cidade"><br /> <br />
+        <input type="submit" name="sbt" value="enviar">
+    </form>
+    <br /> <br /><br /> <br />
+
+    <form name="form2" method="post" onsubmit="return calcular()">
+        peso: <input type="text" name="peso"><br /> <br />
+        altura: <input type="text" name="altura"><br /> <br />
+        <input type="submit" name="sbt" value="calcular IMC"/>
+    </form>
+    <script>
+        function calcular(){
+            var peso = form2.peso.value;
+            var altura = form2.altura.value;
+            var resultado;
+            resultado = (peso/(altura*altura));
+            alert("seu IMC é:" + "" + resultado);
+    }
+    </script>
+    
+    <br /> <br /><br /> <br />
+    <table border="1">
+        <tr>
+            <th>Dia</th>
+            <th>Valor</th>
+            <th>Quantidade</th>
+        </tr>
+        <tr>
+            <td>Segunda</td>
+            <td>350,00</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Terça</td>
+            <td>450,00</td>
+            <td>2000</td>
+        </tr>
+    </table>    
+</body>
+</html>
